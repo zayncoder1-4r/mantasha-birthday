@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Mantasha 🎂</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0; min-height:100vh; overflow:hidden;
+  font-family:Arial, sans-serif;
+  background:linear-gradient(135deg,#16001f,#4b126b,#ff4f9a);
+  color:white; display:flex; align-items:center; justify-content:center;
+}
+.stars span{position:absolute;width:4px;height:4px;background:white;border-radius:50%;opacity:.8;animation:twinkle 2s infinite alternate}
+@keyframes twinkle{to{opacity:.15;transform:scale(.4)}}
+.card{
+  width:min(92%,650px); padding:42px 28px; text-align:center;
+  border:1px solid rgba(255,255,255,.3); border-radius:28px;
+  background:rgba(255,255,255,.12); backdrop-filter:blur(12px);
+  box-shadow:0 20px 70px rgba(0,0,0,.35); position:relative; z-index:2;
+}
+h1{font-size:clamp(38px,8vw,68px);margin:5px 0 10px}
+.name{color:#ffd1eb;text-shadow:0 0 20px #ff77b9}
+.cake{font-size:76px;animation:bounce 1.5s infinite}
+@keyframes bounce{50%{transform:translateY(-10px)}}
+.message{font-size:18px;line-height:1.7;max-width:520px;margin:18px auto;color:#ffeef8}
+button{
+  border:0;border-radius:30px;padding:14px 25px;font-size:16px;
+  background:white;color:#9b2768;cursor:pointer;font-weight:bold;
+}
+#secret{display:none;margin-top:20px;font-size:17px;color:#fff1f8}
+.heart{position:fixed;bottom:-30px;font-size:24px;animation:float 5s linear infinite;z-index:1}
+@keyframes float{to{transform:translateY(-110vh) rotate(25deg);opacity:0}}
+</style>
+</head>
+<body>
+<div class="stars">
+  <span style="left:8%;top:15%"></span><span style="left:20%;top:70%"></span>
+  <span style="left:35%;top:22%"></span><span style="left:65%;top:12%"></span>
+  <span style="left:82%;top:30%"></span><span style="left:90%;top:75%"></span>
+</div>
+
+<div class="card">
+  <div class="cake">🎂</div>
+  <div style="font-size:20px">A little birthday surprise for</div>
+  <h1><span class="name">Mantasha</span> ✨</h1>
+  <p class="message">
+    Happy Birthday! 🎉<br>
+    May your day be filled with beautiful moments, genuine smiles,
+    and all the happiness you deserve. Keep shining, keep smiling,
+    and never stop being the amazing person you are. 💫
+  </p>
+  <button onclick="showSecret()">Click for a little surprise 💌</button>
+  <div id="secret">
+    Some people make ordinary days feel a little more special.<br>
+    I hope this birthday becomes one of your happiest memories. 🌷
+  </div>
+</div>
+
+<script>
+function showSecret(){
+  document.getElementById("secret").style.display="block";
+  for(let i=0;i<18;i++){
+    const h=document.createElement("div");
+    h.className="heart"; h.textContent=["💗","💖","💕","✨"][i%4];
+    h.style.left=Math.random()*100+"vw";
+    h.style.animationDelay=(Math.random()*1.5)+"s";
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),6000);
+  }
+}
+</script>
+</body>
+</html>
